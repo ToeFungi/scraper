@@ -16,7 +16,7 @@ const twitterAdapter = {
    * @returns {Promise<string[]>}
    */
   scrape: async (username, keywords, count = 10) => {
-    const browser = await puppeteer.launch({ headless: false })
+    const browser = await puppeteer.launch({ headless: true })
     const page = await browser.newPage()
 
     await page.goto(`${BASE_URL}/${username}`)
