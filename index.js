@@ -1,16 +1,14 @@
-const scraper = require('./scraper.js')
+const scraper = require('./twitterAdapter.js')
 
-const url = 'https://twitter.com/pickeringacw'
+const username = 'pickeringacw'
 const keywords = [
-  'potential'
+  'certified',
+  'practices'
 ]
 
-// const url = 'https://masks4you.herokuapp.com/'
-// const keywords = ['R1000', 'customised']
-
 const foo = async () => {
-  const data = await scraper.scrape(url, keywords)
-  console.log(data)
+  const data = await scraper.scrape(username, keywords)
+  scraper.writeToFile(data)
 }
 
 foo()
